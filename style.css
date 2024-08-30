@@ -1,0 +1,465 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-position: center;
+    background-image: url('images/tea-striped-cloth-copy-space.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    background-color: #BCC2C9;
+}
+
+.topic {
+    position: absolute;
+    top: 320px; 
+    right: 50px; 
+    margin: 0;
+    font-weight: 1000;
+    font-size: 24px;
+    color: #000; 
+    text-shadow: 1px 1px 4px rgba(0,0, 0, 1);
+    background-color: rgba(0, 0, 0, 0); 
+    padding: 10px 5px; 
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 1px; 
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.topic:hover {
+    transform: scale(1.1);
+    color: #36454F; 
+     
+}
+
+.logo {
+    user-select: none;
+}
+.navigation a {
+    position: relative;
+    font-size: 1em;
+    color: #020707;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    font-weight: 1000;
+    margin-left: 40px;
+}
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #000;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+.navigation a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #020707;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #020707;
+    font-weight: 1000;
+    font-weight: 300;
+    margin-left: 40px;
+}
+.navigation .btnLogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 460px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: transform .5s ease,height .2s ease, transform .5s ease;
+    transform: scale(0);
+}
+.wrapper.active-popup{
+    transform: scale(1);
+}
+/* .wrapper.active {
+    height: 520px;
+} */
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+    position: absolute;
+    transition: transform .5s ease;
+}
+.wrapper .login {
+    transform: translateX(0);
+}
+.wrapper .register {
+    transform: translateX(400px);
+}
+.wrapper.active .login {
+    transform: translateX(-400px);
+}
+.wrapper.active .register {
+    transform: translateX(0);
+}
+.form-box h2 {
+    font-size: 2em;
+    color: #36454F	;
+    text-align: center;
+}
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #2c2325;
+    margin: 30px 0;
+}
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    font-size: .9em;
+    font-weight: 600;
+    pointer-events: none;
+    transition: .5s;
+}
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: -5px;
+}
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 0.9em;
+    color: #36454F	;
+    font-weight: 400;
+    padding: 15px 35px 0 5px;
+}
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.1em;
+    color: #36454F	;
+    line-height: 57px;
+}
+.remember-forgot {
+    font-size: .9em;
+    color: #36454F	;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.remember-forgot label input {
+    accent-color: #000;
+    margin-right: 3px;
+}
+.remember-forgot a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+}
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+.btns {
+    width: 100%;
+    height: 45px;
+    background: #000;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+.login-register {
+    font-size: .9em;
+    color: #36454F	;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+.login-register p a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+}
+.login-register p a:hover {
+    text-decoration: underline;
+}
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    font-size: 1.5em;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-bottom-left-radius: 10px;
+    z-index: 1;
+}
+.home-page {
+    background: none;
+ 
+}
+
+.home-page .home-text {
+    position: absolute;
+    top: 200px;
+    right: 50px; 
+    text-align: right;
+    padding: 20px; 
+}
+
+.home-page .home-text h1,
+
+.home-page .home-text a {
+    margin: 0 0 10px; 
+}
+.home-page .home-text p{
+    margin: 20px 10px;
+}
+.home-page .home-text a.btn {
+    padding: 10px 20px;
+    background-color: #000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.home-page .home-text a.btn:hover {
+    background-color: #36454F; 
+}
+.row{
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.btn-aboutus{
+    margin:8rem 5rem 3rem 5rem ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 25px;
+    color:#000;
+    border: 2px solid #000;
+    font-weight: bold;
+    transition: .3s ease-in-out;
+}
+.btn-aboutus:hover{
+    cursor: pointer;
+    color: #fff;
+    background-color:#000;
+    
+
+}
+
+
+
+h5 {
+    color: #333;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+   
+    
+}
+.fixed-container{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it is above other content */
+    background-color: white;
+}
+.text-center {
+    text-align: center;
+    color: #36454F;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.mb-5 {
+    margin-bottom: 3rem;
+}
+
+#about {
+  
+    padding: 50px;
+    border-radius: 10px;
+    
+}
+.about-container {
+    position: absolute;
+    align-items: center;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background-color: gray;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1000px; /* Adjust as needed */
+    width: calc(100% - 40px);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+
+}
+
+#about {
+    padding-top: 100px; /* Adjust according to your header height */
+}
+
+.btn-aboutus {
+    margin-top: 20px;
+}
+/* Add your existing CSS styles here */
+
+
+
+
+
+.about-section {
+    padding: 50px 0;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#specialtiesCarousel .carousel-item img {
+    border-radius: 10px;
+}
+#team {
+    padding: 50px 0;
+    height: 500px;
+    
+}
+
+#team h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+    transition: transform 0.3s ease;
+    width: 300px;
+    height: 200px;
+   
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 300px;
+    height: 200px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+footer {
+   
+    padding-bottom: 10px;
+    text-align: center;
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    height: 40px;
+   
+}
+
+footer p {
+    margin: 0;
+    font-size: 15px;
+}
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .about-container {
+        padding: 15px;
+    }
+    .about-text, .about-img {
+        width: 100%;
+        text-align: center;
+    }
+}
